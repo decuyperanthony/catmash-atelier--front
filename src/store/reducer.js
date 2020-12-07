@@ -1,3 +1,4 @@
+
 import {
   SET_MATCH,
   SET_RANK
@@ -9,7 +10,35 @@ const initialState = {
   rank: []
 };
 
-export default (state = initialState, action = {}) => {
+// export default (state = initialState, action = {}) => {
+//   switch (action.type) {
+//     case SET_MATCH: {
+//       return {
+//         ...state,
+//         match: [...action.payload],
+//       };
+//     }
+//     case SET_RANK: {
+//       return {
+//         ...state,
+//         rank: [...action.payload],
+//       };
+//     }
+//     // case TOGGLE_THEME: {
+//     //   const toggleTheme = !state.theme;
+//     //   return {
+//     //     ...state,
+//     //     theme: toggleTheme,
+//     //   };
+//     // }
+
+//     default: {
+//       return state;
+//     }
+//   }
+// };
+
+const store = (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_MATCH: {
       return {
@@ -23,16 +52,11 @@ export default (state = initialState, action = {}) => {
         rank: [...action.payload],
       };
     }
-    // case TOGGLE_THEME: {
-    //   const toggleTheme = !state.theme;
-    //   return {
-    //     ...state,
-    //     theme: toggleTheme,
-    //   };
-    // }
 
-    default: {
+    default:
       return state;
-    }
   }
 };
+
+export default store;
+
