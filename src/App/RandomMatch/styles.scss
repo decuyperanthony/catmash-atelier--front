@@ -1,5 +1,68 @@
-.cat-container {
-    &:hover {
-        cursor: pointer;
+$color-primary: #3B5263 ;
+$color-secondary: rgba(236,240,240,1) ;
+$color-gold: #FFD700;
+
+.bloc-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    // justify-content: space-between;
+}
+
+
+.logo-container {
+    margin-top: 0.5em;
+    flex: 2;
+    .logo {
+        height: 10em;
     }
 }
+
+.catmatch-container {
+    flex: 5.5 1;
+    display: flex;
+    justify-content: space-evenly;
+    .cat-container {
+        border-radius: 50%;
+        border: 10px white solid;
+        // clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 51% 100%, 51% 100%, 0% 80%, 0% 20%);
+        height: 14em;
+        width: 14em;
+        transition: border-color 0.5s ease;
+        &:hover {
+            border-color: $color-gold;
+            cursor: pointer;
+        }
+    }
+}
+
+.link-container {
+
+    .link {
+        text-decoration: none;
+        color: $color-primary;
+        .text-container {
+            border-radius: 5px;
+            border: 5px solid $color-secondary;
+            border-bottom: none;
+            background-color: #F7F7F7;
+            width: 50%;
+            margin: auto;
+            padding: 0.2em 1em;
+            transition: border-color 0.5s ease;
+            &:hover {
+                border-color: $color-primary;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// === === === === MEDIA QUERIES === === === ===
+@media screen and (max-width: 540px) {
+    .catmatch-container .cat-container {
+      height: 9em;
+      width: 9em;
+    }
+  }
+

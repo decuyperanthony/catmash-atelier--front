@@ -13,7 +13,7 @@ const addVote = (body) => {
       .then((res) => {
         // getAllPosts(userId);
         getOneRandomMatch();
-        console.log('res', res)
+        console.log('res', res);
       })
       .catch((err) => console.trace(err));
 };
