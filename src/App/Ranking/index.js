@@ -14,11 +14,11 @@ const Ranking = () => {
     if (rank.length > 0) {
         rankJSX = rank.map((r) => {
             return(
-                <div key={r.cat_id}>
+                <div key={r.id}>
                     <div>
-                        {r.cat.name}
-                         : {r.votecount}
-                         <img style={{height: '10em', width: 'auto'}} alt="cat" src={r.cat.image_path}/>
+                        {/* {r.cat.name} */}
+                         : {r.countvote}
+                         <img style={{height: '10em', width: 'auto'}} alt="cat" src={r.image_path}/>
                     </div>
                 </div>
             )
