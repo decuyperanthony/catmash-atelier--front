@@ -1,0 +1,35 @@
+$color-primary: #3B5263 ;
+
+
+.cats-container-rank {
+    max-width: 70%;
+    padding-top: 1em;
+    margin: auto;
+    overflow-y: scroll;
+    height: calc(100vh - 56px - 160px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cat-rank-div-img {
+    border: 10px white solid;
+    height: 12em;
+    width: 12em;
+}
+
+.vote-typo {
+    color: $color-primary;
+    font-weight: bold;
+}
+
+// === === === === MEDIA QUERIES === === === ===
+@media screen and (max-width: 540px) {
+    .cats-container-rank {
+        max-width: 100%;
+    }
+    .cat-rank-img {
+        height: 7em;
+        width: 7em;
+    }
+}

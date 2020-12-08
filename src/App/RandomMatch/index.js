@@ -1,16 +1,21 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
+
+// == server method
 import getOneRandomMatch from '../../utils/getOneRandomMatch';
+import getTotalVotes from '../../utils/getTotalVotes';
 import addVoteAndCat from '../../utils/addVoteAndCat';
 
+// == assets
 import logo from '../../assets/img/catmashbig.png'
 import './styles.scss';
 
 const RandomMatch = () => {
-    const { match } = useSelector((state) => state);
+    const { match, totalVotes } = useSelector((state) => state);
     React.useEffect(() => {
         getOneRandomMatch();
+        getTotalVotes();
     }, []);
 
     const handleVote = (name, imagePath) => {
@@ -35,8 +40,6 @@ const RandomMatch = () => {
                   key={m.id}
                   className="cat-container"
                  />
-
-
             )
         });
     }
@@ -54,7 +57,7 @@ const RandomMatch = () => {
             <Link className="link" to="/rank">
                 <div className="text-container">
                   Voir les plus beaux chats<br />
-                  <span style={{fontSize: '0.8em'}}>12000 votes</span>
+                  <span style={{fontSize: '0.8em'}}>{`${totalVotes} votes` || 'loading...'}</span>
                 </div>
             </Link>
           </div>

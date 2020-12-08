@@ -1,14 +1,11 @@
 $color-primary: #3B5263 ;
 $color-secondary: rgba(236,240,240,1) ;
-$color-gold: #FFD700;
 
 .bloc-page {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    // justify-content: space-between;
 }
-
 
 .logo-container {
     margin-top: 0.5em;
@@ -30,17 +27,16 @@ $color-gold: #FFD700;
         width: 14em;
         transition: border-color 0.5s ease;
         &:hover {
-            border-color: $color-gold;
+            border-color: $color-primary;
             cursor: pointer;
         }
         &:focus {
-            border-color: white;
+            border-color: white !important;
         }
     }
 }
 
 .link-container {
-
     .link {
         text-decoration: none;
         color: $color-primary;
@@ -67,5 +63,5 @@ $color-gold: #FFD700;
       height: 9em;
       width: 9em;
     }
-  }
+}
 
