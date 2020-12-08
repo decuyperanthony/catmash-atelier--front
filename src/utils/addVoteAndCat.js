@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import { API_URL } from './constante';
 import getOneRandomMatch from './getOneRandomMatch';
+import getTotalVotes from './getTotalVotes';
 
 
 
@@ -10,10 +11,9 @@ const addVote = (body) => {
       .post(`${API_URL}/vote`,
         body
       )
-      .then((res) => {
-        // getAllPosts(userId);
+      .then(() => {
         getOneRandomMatch();
-        console.log('res', res);
+        getTotalVotes();
       })
       .catch((err) => console.trace(err));
 };

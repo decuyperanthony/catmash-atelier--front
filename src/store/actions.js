@@ -11,3 +11,10 @@ export const setRank = (payload) => ({
     type: SET_RANK,
     payload,
 });
+
+export const SET_TOTAL_VOTES = 'SET_TOTAL_VOTES';
+
+export const setTotalVotes = (payload) => ({
+    type: SET_TOTAL_VOTES,
+    payload,
+});
