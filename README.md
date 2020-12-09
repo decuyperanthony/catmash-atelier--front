@@ -1,6 +1,6 @@
 
 
-[![MIT License][license-shield]][license-url]
+
 
 
 
@@ -12,7 +12,7 @@
     <!-- <img src=".github/img/logo.png" alt="Logo" width="80" height="80"> -->
   </a>
 
-  <h3 align="center">Cat Mash</h3>
+  <h3 align="center">Cat Mash API</h3>
 
 
 
@@ -25,7 +25,6 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Contributing](#contributing)
-* [License](#license)
 * [Contact](#contact)
 
 
@@ -41,10 +40,10 @@
 * [Redux](https://redux.js.org/)
 * [Sass](https://sass-lang.com/documentation/syntax)
 * [Postgres](https://www.postgresql.org/)
+* [Sqitch](https://sqitch.org/)
 * [catsAtelierAPI]()
 
-## Overview
- <img src="./.github/img/catmash-screen.png" alt="Logo" width="auto" height="250">
+
 
 ## Demo
 
