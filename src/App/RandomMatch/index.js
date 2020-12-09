@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+import Loader from '../Loader';
 
 // == server method
 import getOneRandomMatch from '../../utils/getOneRandomMatch';
@@ -8,7 +10,7 @@ import getTotalVotes from '../../utils/getTotalVotes';
 import addVoteAndCat from '../../utils/addVoteAndCat';
 
 // == assets
-import logo from '../../assets/img/catmashbig.png'
+import logo from '../../assets/img/catmashbig.png';
 import './styles.scss';
 
 const RandomMatch = () => {
@@ -26,7 +28,7 @@ const RandomMatch = () => {
         addVoteAndCat(body);
     }
 
-    let matchJSX = (<div>Loading...</div>);
+    let matchJSX = (<Loader />);
     if (match.length > 0) {
         matchJSX = match.map((m) => {
             return(

@@ -1,0 +1,24 @@
+#loader {
+  width: 150px;
+  height: 150px;
+  transform-origin: 50% 50%;
+}
+
+.rotating {
+  animation: rotating 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rotating {
+    animation: rotating-spin infinite 2s linear;
+  }
+}
+
+@keyframes rotating-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

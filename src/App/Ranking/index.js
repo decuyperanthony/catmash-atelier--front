@@ -3,17 +3,26 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import getRank from '../../utils/getRank';
+import getMoreCatsRanking from '../../utils/getMoreCatsRanking';
+import getTotalCats from '../../utils/getTotalCats';
+
+import Loader from '../Loader';
 
 import logo from '../../assets/img/catmashbig.png'
 import './styles.scss';
 
 const Ranking = () => {
-    const { rank } = useSelector((state) => state);
+    const { rank, offset } = useSelector((state) => state);
     React.useEffect(() => {
         getRank();
+        getTotalCats();
     }, []);
 
-    let rankJSX = (<div>Loading...</div>);
+    const handleLoadMoreCats = () => {
+      getMoreCatsRanking(offset);
+    }
+
+    let rankJSX = (<Loader />);
     if (rank.length > 0) {
         rankJSX = rank.map((r, index) => {
             let borderColorCatImage;
@@ -46,7 +55,18 @@ const Ranking = () => {
           <div className="logo-container">
             <img className="logo" src={logo} alt="logo-catmatch"/>
           </div>
-          <div className="cats-container-rank">{rankJSX}</div>
+          <div className="cats-button-container-rank">
+            <div className="cats-container-rank">
+              {rankJSX}
+            </div>
+            <button
+              // disabled={buttonIsDisabled}
+              className="button-load-more"
+              onClick={handleLoadMoreCats}
+            >
+              Voir plus de chats
+            </button>
+          </div>
           <div className="link-container">
             <Link className="link" to="/">
               <div className="text-container">
