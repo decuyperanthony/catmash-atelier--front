@@ -3,12 +3,12 @@ import store from '../store/index';
 import { API_URL } from './constante';
 
 // == actions
-import { setRank } from '../store/actions';
+import { setCatRankIng } from '../store/actions';
 
 const getRank = () => {
-  axios.get(`${API_URL}/rank`)
+  axios.get(`${API_URL}/rank?limit=10&offset=0`)
     .then((res) => {
-        store.dispatch(setRank(res.data));
+        store.dispatch(setCatRankIng(res.data));
     })
     .catch((err) => console.trace(err));
 
